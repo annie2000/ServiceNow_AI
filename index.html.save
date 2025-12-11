@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow AI - Technical Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #1e3a8a 0%, #3b82f6 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        .header {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            text-align: center;
+        }
+        .header h1 {
+            color: #1e3a8a;
+            font-size: 42px;
+            margin-bottom: 15px;
+        }
+        .header p {
+            color: #666;
+            font-size: 18px;
+        }
+        .section {
+            background: white;
+            border-radius: 20px;
+            padding: 40px;
+            margin-bottom: 30px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        .section h2 {
+            color: #1e3a8a;
+            font-size: 28px;
+            margin-bottom: 25px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid #3b82f6;
+        }
+        .links-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 20px;
+            list-style: none;
+        }
+        .link-card {
+            background: linear-gradient(135deg, #f0f9ff 0%, #e0f2fe 100%);
+            border-radius: 12px;
+            padding: 25px;
+            transition: all 0.3s ease;
+            border: 2px solid transparent;
+        }
+        .link-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 30px rgba(59, 130, 246, 0.3);
+            border-color: #3b82f6;
+        }
+        .link-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .icon {
+            font-size: 40px;
+            margin-bottom: 15px;
+        }
+        .link-title {
+            font-size: 20px;
+            font-weight: bold;
+            color: #1e3a8a;
+            margin-bottom: 10px;
+        }
+        .link-description {
+            color: #555;
+            font-size: 14px;
+            line-height: 1.5;
+        }
+        .footer {
+            text-align: center;
+            color: white;
+            margin-top: 40px;
+            padding: 20px;
+            opacity: 0.9;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🤖 ServiceNow AI Resources</h1>
+            <p>Technical Documentation & Learning Materials</p>
+        </div>
+
+        <div class="section">
+            <h2>📚 Quick Links</h2>
+            <ul class="links-grid">
+                <li class="link-card">
+                    <a href="GenAI_Foundation/">
+                        <div class="icon">🧠</div>
+                        <div class="link-title">GenAI Foundation</div>
+                        <div class="link-description">
+                            Comprehensive learning materials covering In-Context Learning, 
+                            Prompt Engineering, and RAG implementations
+                        </div>
+                    </a>
+                </li>
+                
+                <li class="link-card">
+                    <a href="ai_agent_demo_diagram%20(1).html">
+                        <div class="icon">🎯</div>
+                        <div class="link-title">AI Agent Demo Diagram</div>
+                        <div class="link-description">
+                            Interactive diagram showcasing AI agent architecture and workflows
+                        </div>
+                    </a>
+                </li>
+                
+                <!-- Add more links here as needed -->
+                <!--
+                <li class="link-card">
+                    <a href="your-link-here/">
+                        <div class="icon">🔗</div>
+                        <div class="link-title">Your Title</div>
+                        <div class="link-description">
+                            Your description here
+                        </div>
+                    </a>
+                </li>
+                -->
+            </ul>
+        </div>
+
+        <div class="footer">
+            <p>ServiceNow AI Technical Resources | Last updated: December 2024</p>
+            <p>Maintained by Ihnaee Kim</p>
+        </div>
+    </div>
+</body>
+</html>
