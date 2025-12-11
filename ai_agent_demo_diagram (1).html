@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ServiceNow AI Agent Demo Flow</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            padding: 40px;
+            min-height: 100vh;
+        }
+        
+        .container {
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        h1 {
+            text-align: center;
+            color: #1a1a1a;
+            margin-bottom: 10px;
+            font-size: 2.5em;
+            font-weight: 700;
+        }
+        
+        .subtitle {
+            text-align: center;
+            color: #666;
+            margin-bottom: 50px;
+            font-size: 1.1em;
+        }
+        
+        .demo-flow {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .section {
+            position: relative;
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 25px;
+            padding: 15px 25px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            border-radius: 12px;
+            font-size: 1.4em;
+            font-weight: 600;
+            box-shadow: 0 4px 15px rgba(102, 126, 234, 0.3);
+        }
+        
+        .section-icon {
+            font-size: 1.5em;
+        }
+        
+        .steps-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 20px;
+            position: relative;
+        }
+        
+        .step {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 25px;
+            position: relative;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+        
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 8px 25px rgba(102, 126, 234, 0.2);
+            border-color: #667eea;
+        }
+        
+        .step-number {
+            position: absolute;
+            top: -15px;
+            left: 20px;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            color: white;
+            width: 35px;
+            height: 35px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: bold;
+            font-size: 0.9em;
+            box-shadow: 0 3px 10px rgba(102, 126, 234, 0.4);
+        }
+        
+        .step-title {
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 12px;
+            font-size: 1.1em;
+            padding-top: 10px;
+        }
+        
+        .step-description {
+            color: #555;
+            font-size: 0.95em;
+            line-height: 1.5;
+            margin-bottom: 12px;
+        }
+        
+        .ai-feature {
+            display: inline-flex;
+            align-items: center;
+            gap: 6px;
+            background: linear-gradient(135deg, #ffeaa7 0%, #fdcb6e 100%);
+            color: #2d3436;
+            padding: 6px 12px;
+            border-radius: 20px;
+            font-size: 0.85em;
+            font-weight: 600;
+            margin-top: 10px;
+        }
+        
+        .connector {
+            text-align: center;
+            padding: 15px 0;
+            position: relative;
+        }
+        
+        .connector::before {
+            content: '↓';
+            font-size: 2.5em;
+            color: #667eea;
+            font-weight: bold;
+            display: block;
+            animation: bounce 2s infinite;
+        }
+        
+        @keyframes bounce {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-10px); }
+        }
+        
+        .handoff {
+            background: linear-gradient(135deg, #ff6b6b 0%, #ee5a6f 100%);
+            color: white;
+            padding: 20px;
+            border-radius: 12px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2em;
+            margin: 20px 0;
+            box-shadow: 0 4px 15px rgba(255, 107, 107, 0.3);
+        }
+        
+        .key-outcomes {
+            background: linear-gradient(135deg, #00b894 0%, #00cec9 100%);
+            color: white;
+            padding: 30px;
+            border-radius: 12px;
+            margin-top: 40px;
+        }
+        
+        .key-outcomes h3 {
+            margin-bottom: 20px;
+            font-size: 1.5em;
+        }
+        
+        .outcomes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 20px;
+        }
+        
+        .outcome-item {
+            background: rgba(255, 255, 255, 0.2);
+            padding: 15px;
+            border-radius: 8px;
+            backdrop-filter: blur(10px);
+        }
+        
+        .outcome-item strong {
+            display: block;
+            margin-bottom: 5px;
+            font-size: 1.1em;
+        }
+        
+        @media print {
+            body {
+                background: white;
+                padding: 0;
+            }
+            .container {
+                box-shadow: none;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 ServiceNow AI Agent Demo Flow</h1>
+        <p class="subtitle">End-to-End Journey: From Employee Self-Service to AI-Powered Resolution</p>
+        
+        <div class="demo-flow">
+            <!-- PART 1: EMPLOYEE EXPERIENCE -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">👤</span>
+                    <span>PART 1: Employee Experience</span>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">1</div>
+                        <div class="step-title">Self-Service Success</div>
+                        <div class="step-description">
+                            Employee (System Admin) requests password reset via Now Assist Virtual Agent in Employee Center
+                        </div>
+                        <div class="ai-feature">🤖 Intent Recognition</div>
+                        <div class="ai-feature">✅ Automated Fulfillment</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">2</div>
+                        <div class="step-title">Complex Issue Reported</div>
+                        <div class="step-description">
+                            VPN connection fails due to a password reset
+                        </div>
+                        <div class="ai-feature">🔍 KB Search and retrieval</div>
+                        <div class="ai-feature">🎯 Intelligent Assessment</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">3</div>
+                        <div class="step-title">Smart Escalation</div>
+                        <div class="step-description">
+                            The Virtual Agent recognizes its limits, navigates the user to create an incident, and starts the process to resolve it.
+                        </div>
+                        <div class="ai-feature">📝 Auto-populated Fields</div>
+                        <div class="ai-feature">🎯 Smart Routing</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- HANDOFF -->
+            <div class="handoff">
+                🔄 INCIDENT HANDOFF TO FULFILLER (Beth Anglin - Network Support)
+            </div>
+            
+            <!-- PART 2: FULFILLER EXPERIENCE -->
+            <div class="section">
+                <div class="section-header">
+                    <span class="section-icon">👩‍💼</span>
+                    <span>PART 2: Fulfiller Experience - AI-Powered Agent Workspace</span>
+                </div>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">4</div>
+                        <div class="step-title">Incident Summarization</div>
+                        <div class="step-description">
+                            AI generates comprehensive summary with business context, priority recommendation
+                        </div>
+                        <div class="ai-feature">📊 GenAI Summary</div>
+                        <div class="ai-feature">⚡ Sentiment Intelligence</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">5</div>
+                        <div class="step-title">Similar Incidents</div>
+                        <div class="step-description">
+                            AI surfaces similar cases with resolutions and confidence scores
+                        </div>
+                        <div class="ai-feature">🔎 Vector Search</div>
+                        <div class="ai-feature">📈 Pattern Recognition</div>
+                    </div>
+                    
+<!--                    <div class="step">
+                        <div class="step-number">6</div>
+                        <div class="step-title">Chat Reply Recommendation</div>
+                        <div class="step-description">
+                            AI generates professional response with troubleshooting steps and empathetic tone
+                        </div>
+                        <div class="ai-feature">💬 Context-Aware Gen</div>
+                        <div class="ai-feature">🎨 Tone Selection</div>
+                    </div>
+                -->
+                </div>
+                
+                <div class="connector"></div>
+                
+                <div class="steps-container">
+                    <div class="step">
+                        <div class="step-number">7</div>
+                        <div class="step-title">Resolution Notes Generation</div>
+                        <div class="step-description">
+                            Issue resolved! AI auto-generates structured resolution notes with root cause analysis
+                        </div>
+                        <div class="ai-feature">📝 Auto-Documentation</div>
+                        <div class="ai-feature">🎯 Root Cause ID</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">8</div>
+                        <div class="step-title">Email Recommendation</div>
+                        <div class="step-description">
+                            AI drafts professional closure email with solution summary and KB references
+                        </div>
+                        <div class="ai-feature">📧 Template Intelligence</div>
+                        <div class="ai-feature">🔗 KB Linkage</div>
+                    </div>
+                    
+                    <div class="step">
+                        <div class="step-number">9</div>
+                        <div class="step-title">KB Generation</div>
+                        <div class="step-description">
+                            AI transforms resolution into searchable KB article with ITIL structure
+                        </div>
+                        <div class="ai-feature">📚 KB Auto-Generation</div>
+                        <div class="ai-feature">🔄 Continuous Learning</div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- KEY OUTCOMES -->
+            <div class="key-outcomes">
+                <h3>🎯 Key Business Outcomes</h3>
+                <div class="outcomes-grid">
+                    <div class="outcome-item">
+                        <strong>Employee Experience</strong>
+                        Instant self-service + smart escalation with zero context loss
+                    </div>
+                    <div class="outcome-item">
+                        <strong>Agent Productivity</strong>
+                        8 min resolution vs. 30-45 min traditional process
+                    </div>
+                    <div class="outcome-item">
+                        <strong>Knowledge Capture</strong>
+                        Every resolution becomes institutional knowledge automatically
+                    </div>
+                    <div class="outcome-item">
+                        <strong>Deflection Rate</strong>
+                        40-60% of routine issues resolved without human touch
+                    </div>
+                    <div class="outcome-item">
+                        <strong>MTTR Reduction</strong>
+                        50% faster incident resolution through AI assistance
+                    </div>
+                    <div class="outcome-item">
+                        <strong>Quality Consistency</strong>
+                        Standardized communication and documentation across teams
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
