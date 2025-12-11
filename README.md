@@ -20,19 +20,12 @@ This repository contains demonstration materials and resources for ServiceNow AI
 
 ### GenAI Foundation Materials
 - [GenAI Foundation Hub](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/) - Main portal for all learning materials
-- [In-Context Learning](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/In-Context_Learning/) - ICL mechanisms and applications
-- [Prompt Engineering](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/Prompt_engineering/) - Best practices for prompt design
-- [RAG Implementation](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/RAG/) - Retrieval Augmented Generation guide
+- [In-Context Learning](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/In-Context_Learning/) - Understanding in-context learning mechanisms and applications in modern language models
+- [Prompt Engineering](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/Prompt_engineering/) - Best practices and techniques for effective prompt design and optimization
+- [RAG Implementation](https://annie2000.github.io/ServiceNow_AI/GenAI_Foundation/RAG/) - Comprehensive guide to RAG architecture, implementation, and use cases
 
 ### Demos & Diagrams
 - [AI Agent Demo Diagram](https://annie2000.github.io/ServiceNow_AI/ai_agent_demo_diagram%20(1).html) - Interactive agent architecture
-
-## 📖 Topics Covered
-
-- **In-Context Learning**: Understanding in-context learning mechanisms and applications in modern language models
-- **Prompt Engineering**: Best practices and techniques for effective prompt design and optimization
-- **RAG (Retrieval Augmented Generation)**: Comprehensive guide to RAG architecture, implementation, and use cases
-
 
 ## Target Audience
 - Strategic Integrator Core Solution Consultants
