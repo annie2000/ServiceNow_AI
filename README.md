@@ -14,7 +14,8 @@ This repository contains demonstration materials and resources for ServiceNow AI
 - AI-powered email classification and routing demonstration
 
 ## Quick Links
-- [View Demo Page](https://annie2000.github.io/ServiceNow_AI/)
+- [AI Agent Demo Story (HTML)](https://annie2000.github.io/ServiceNow_AI/ai_agent_demo_diagram%20(1).html)
+- [View All Materials](https://annie2000.github.io/ServiceNow_AI/)
 
 ## Target Audience
 - Strategic Integrator Core Solution Consultants
