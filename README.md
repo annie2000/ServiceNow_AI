@@ -16,10 +16,7 @@ This repository contains demonstration materials and resources for ServiceNow AI
 ## Quick Links
 - [View All Materials](https://annie2000.github.io/ServiceNow_AI/)
 - [AI Agent Demo Story (HTML)](https://annie2000.github.io/ServiceNow_AI/ai_agent_demo_diagram%20(1).html)
-- [ServiceNow ITSM AI Agent Demo](https://annie2000.github.io/ServiceNow_AI/demo.html)
 - [ServiceNow ITSM AI Agent Demo Video](https://servicenow-my.sharepoint.com/personal/ihnaee_choi_servicenow_com/_layouts/15/stream.aspx?id=%2Fpersonal%2Fihnaee%5Fchoi%5Fservicenow%5Fcom%2FDocuments%2FDemo%20and%20Training%2FGithub%2FAI%5FAgent%5FITSM%2Emov&ga=1) 🎥
-- [View All Materials](https://annie2000.github.io/ServiceNow_AI/)
-
 
 ## Target Audience
 - Strategic Integrator Core Solution Consultants
