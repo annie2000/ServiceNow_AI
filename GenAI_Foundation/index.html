@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GenAI Foundation - Technical Resources</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            padding: 40px 20px;
+        }
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            background: white;
+            border-radius: 20px;
+            padding: 50px;
+            box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+        }
+        h1 {
+            color: #333;
+            margin-bottom: 10px;
+            font-size: 36px;
+        }
+        .subtitle {
+            color: #666;
+            margin-bottom: 40px;
+            font-size: 18px;
+        }
+        .presentation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 25px;
+            list-style: none;
+        }
+        .presentation-card {
+            background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+            border-radius: 15px;
+            padding: 30px;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            border: 3px solid transparent;
+        }
+        .presentation-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+            border-color: #667eea;
+        }
+        .presentation-card a {
+            text-decoration: none;
+            color: inherit;
+            display: block;
+        }
+        .icon {
+            font-size: 50px;
+            margin-bottom: 15px;
+        }
+        .title {
+            font-size: 22px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 12px;
+        }
+        .description {
+            color: #555;
+            font-size: 15px;
+            line-height: 1.6;
+        }
+        .footer {
+            margin-top: 50px;
+            text-align: center;
+            color: #999;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>🤖 GenAI Foundation</h1>
+        <p class="subtitle">Technical Resources & Learning Materials</p>
+        
+        <ul class="presentation-grid">
+            <li class="presentation-card">
+                <a href="PDF/In-Context_Learning/index.html">
+                    <div class="icon">📚</div>
+                    <div class="title">In-Context Learning</div>
+                    <div class="description">
+                        Understanding in-context learning mechanisms and applications
+                        in modern language models
+                    </div>
+                </a>
+            </li>
+            
+            <li class="presentation-card">
+                <a href="PDF/Prompt_engineering/index.html">
+                    <div class="icon">⚙️</div>
+                    <div class="title">Prompt Engineering</div>
+                    <div class="description">
+                        Best practices and techniques for effective prompt design
+                        and optimization
+                    </div>
+                </a>
+            </li>
+            
+            <li class="presentation-card">
+                <a href="PDF/RAG/index.html">
+                    <div class="icon">🔍</div>
+                    <div class="title">RAG (Retrieval Augmented Generation)</div>
+                    <div class="description">
+                        Comprehensive guide to RAG architecture, implementation,
+                        and use cases
+                    </div>
+                </a>
+            </li>
+        </ul>
+        
+        <div class="footer">
+            <p>Last updated: December 2024 | Ihnaee Kim</p>
+        </div>
+    </div>
+</body>
+</html>
